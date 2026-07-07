@@ -601,7 +601,7 @@ class MACECalculator(Calculator):
         # edge_indices, cell_offsets, num_neighbors = radius_graph_pbc(
         edge_indices, cell_offsets, num_neighbors = radius_graph_pbc_cuda(
             gbatch,
-            radius=4.5, 
+            radius=self.r_max, 
             max_num_neighbors_threshold=float('inf'), 
             pbc=[True, True, True], 
             dtype=self.dtype
